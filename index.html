@@ -165,7 +165,9 @@
       
       
       xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://T0eL2XdYC7LrjI4gFuvA5rJntBpDuYuZaszKt8tC:javascript-key=pcq6oIWXRSdCFZjLCbwc3RNYqUaOZbnLhNjgabs1@api.parse.com/1/classes/FrozenPoll', true);
+      xhr.setRequestHeader('X-Parse-Application-Id', 'T0eL2XdYC7LrjI4gFuvA5rJntBpDuYuZaszKt8tC');
+      xhr.setRequestHeader('X-Parse-REST-API-Key', 'SvYHtzcNgUMAeQwu7AXvAZUQM39SGihndDrjASVV');
+      xhr.open('GET', 'https://api.parse.com/1/classes/FrozenPoll', true);
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
