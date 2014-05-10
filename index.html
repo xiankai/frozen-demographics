@@ -103,10 +103,10 @@
   </head>
   <body>
 
-  <div id="container"></div>
+  <div id="container" style="display:none;"></div>
 
   <div id="info">
-    <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span class="bull">&bull;</span> Created by <a href="http://www.reddit.com/user/trenchino">/u/trenchino</a> <span class="bull">&bull;</span> Data acquired from <a href="xiankai.github.io/elsa-froze-the-world">an online poll</a>
+    <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span class="bull">&bull;</span> Created by <a href="http://www.reddit.com/user/trenchino">/u/trenchino</a> <span class="bull">&bull;</span> Data acquired from <a href="http://xiankai.github.io/elsa-froze-the-world">an online poll</a> for <a href="http://www.reddit.com/r/Frozen">/r/Frozen</a>
   </div>
 
   <div id="currentInfo" style="display:none;">
@@ -161,8 +161,7 @@
       }
       
       var xhr;
-      TWEEN.start();
-      
+      TWEEN.start();      
       
       xhr = new XMLHttpRequest();
       xhr.open('GET', 'https://api.parse.com/1/classes/FrozenPoll', true);
@@ -182,7 +181,12 @@
             globe.createPoints();
             settime(globe,0)();
             globe.animate();
-            document.body.style.backgroundImage = 'none'; // remove loading
+
+            // Give more time to animate dat Anna gif
+            setTimeout(function() {
+            	document.getElementById('container').style.display = 'block';
+            	document.body.style.backgroundImage = 'none'; // remove loading
+            }, 2000);
           }
         }
       };
