@@ -135,7 +135,7 @@
 
       var years = ['1990','1995','2000'];
       var container = document.getElementById('container');
-      var globe = new DAT.Globe(container);
+      var globe = new DAT.Globe(container, {imgDir: 'globe/'});
 
       console.log(globe);
       var i, tweens = [];
@@ -176,7 +176,7 @@
             var globedata = [];
 
             for (i=0;i<data.length;i++) {
-           	  globe.push(data[i].lat, data[i].lng, 1);
+           	  globedata.push(data[i].lat, data[i].lng, 1);
             }
             globe.addData(globedata, {format: 'magnitude', animated: true});
             globe.createPoints();
