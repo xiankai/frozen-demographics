@@ -10,7 +10,7 @@
       body {
         margin: 0;
         padding: 0;
-        background: #000000 url(globe/loading.gif) center center no-repeat;
+        background: #000000 url(anna.gif) center center no-repeat;
         color: #ffffff;
         font-family: sans-serif;
         font-size: 13px;
@@ -106,10 +106,10 @@
   <div id="container"></div>
 
   <div id="info">
-    <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span class="bull">&bull;</span> Created by <a href="">/u/trenchino</a> <span class="bull">&bull;</span> Data acquired from <a href="xiankai.github.io/elsa-froze-the-world">an online poll</a>
+    <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span class="bull">&bull;</span> Created by <a href="http://www.reddit.com/user/trenchino">/u/trenchino</a> <span class="bull">&bull;</span> Data acquired from <a href="xiankai.github.io/elsa-froze-the-world">an online poll</a>
   </div>
 
-  <div id="currentInfo">
+  <div id="currentInfo" style="display:none;">
     <span id="year1990" class="year">1990</span>
     <span id="year1995" class="year">1995</span>
     <span id="year2000" class="year">2000</span>
@@ -176,7 +176,7 @@
             var globedata = [];
 
             for (i=0;i<data.length;i++) {
-           	  globedata.push(data[i].lat, data[i].lng, 1);
+           	  globedata.push(data[i].lat, data[i].lng, 0.1);
             }
             globe.addData(globedata, {format: 'magnitude', animated: true});
             globe.createPoints();
